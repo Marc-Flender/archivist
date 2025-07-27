@@ -15,6 +15,7 @@ while true
 do
     echo ""
     echo "Please enter the absolute path of the encrypted backup you're willing to decrypt"
+    echo "Please no / at the end of the path"
     echo -n ": "
     read encrypted_backup_dir
 
@@ -37,6 +38,8 @@ echo ""
 #=================================================
 
 echo "Please enter the password to decrypt encfs file"
+echo "this password is in the passkey file"
+echo "the file .encds6.xml.encrypted.cpt must be in the same directory as the file to decrupt"
 ccrypt --decrypt "$encrypted_backup_dir/.encfs6.xml.encrypted.cpt"
 mv "$encrypted_backup_dir/.encfs6.xml.encrypted" "$encrypted_backup_dir/.encfs6.xml"
 
